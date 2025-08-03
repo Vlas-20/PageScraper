@@ -4,9 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PageScraper"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Name="Control"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid DataContext="{Binding ElementName=Control, Path=ViewModel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Label Content="Web Page Scraper" FontSize="24"></Label>
+        
+        
+        
     </Grid>
 </Window>
