@@ -10,11 +10,43 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         
-        <Label Content="Web Page Scraper" FontSize="24"></Label>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="Web Page Scraper" FontSize="24"></Label>
         
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0" Content="Url: " HorizontalContentAlignment="Right" />
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding WebsiteUrl}"></TextBox>
+            
+            <Label Grid.Row="1" Grid.Column="0" Content="Select which attributes you want scapt" />
+            
+            <Label Grid.Row="2" Grid.Column="0" Content="Images:" HorizontalContentAlignment="Right" />
+            <CheckBox Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding ScrapeImages}" />
+
+            <Label Grid.Row="3" Grid.Column="0" Content="Links:" HorizontalContentAlignment="Right" />
+            <CheckBox Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding ScrapeLinks}" />
+
+        </Grid>
+            
         
+        <Button Grid.Row="2" Grid.Column="1" Content="Start Scraping" Margin="10" Padding="10" FontSize="16" Command="{Binding StartScrapingCommand}"></Button>
         
     </Grid>
 </Window>
